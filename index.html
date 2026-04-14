@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: rgb(12, 12, 12);
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #quote {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    #author {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #00c6ff;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0072ff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>💡 Inspirational Quote Generator</h1>
+
+    <div id="quote">Click the button to get inspired!</div>
+    <div id="author"></div>
+
+    <button onclick="newQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+      { text: "Don’t let yesterday take up too much of today.", author: "Will Rogers" },
+      { text: "It’s not whether you get knocked down, it’s whether you get up.", author: "Vince Lombardi" },
+      { text: "If you are working on something exciting, it will keep you motivated.", author: "Steve Jobs" },
+      { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+      { text: "Dream big and dare to fail.", author: "Norman Vaughan" },
+      { text: "Hard work beats talent when talent doesn’t work hard.", author: "Tim Notke" }
+    ];
+
+    function newQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+
+      document.getElementById("quote").textContent = `"${quote.text}"`;
+      document.getElementById("author").textContent = `- ${quote.author}`;
+    }
+  </script>
+
+</body>
+</html>
